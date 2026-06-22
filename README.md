@@ -92,7 +92,7 @@ python jarvis.py     # Main assistant
 
 ## Author
 
-**Alex** — CS Engineering student, BCN eMotorsport autonomous vehicle team.
+**Alex** — CS Engineering student
 
 ---
 
