@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "Di solo: Listo."
+  },
+  {
+    "role": "assistant",
+    "content": "Plan de acción actualizado."
+  }
+]
