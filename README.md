@@ -12,33 +12,65 @@ JARVIS is a personal AI assistant that runs entirely on your machine. It listens
 
 ---
 
-## Features
+## What JARVIS Can Do
 
-- **Wake word detection** — "Hey Jarvis" via openwakeword
-- **Local LLM** — llama3.2 running on Ollama, fully offline
-- **Natural voice** — Edge TTS with Spanish neural voice
-- **Iron Man HUD** — PyQt6 particle orb that reacts to assistant state in real time
-- **Spotify control** — play, pause, skip by voice
-- **Gmail & Calendar** — read emails, check events, send messages by voice
-- **Google Maps** — route calculation and navigation
-- **Weather, news, timers, system stats** — all by voice
-- **Chrome automation** — search, navigate, scroll via Selenium
-- **PC macros** — volume, screenshots, window management
+### Music
+- Play any song, artist or genre on Spotify
+- Pause, resume, skip to next or previous track
+
+### Communication
+- Read unread Gmail emails aloud
+- Send emails to saved contacts by voice
+- Check upcoming Google Calendar events
+- Create new calendar events by voice
+
+### Navigation
+- Calculate driving time and distance to any destination
+- Open the route directly in Google Maps
+
+### Information
+- Real-time weather for any city
+- Latest news headlines by category (tech, sports, economy, international)
+- Current time and date
+
+### System Control
+- Raise, lower or mute system volume
+- Set precise volume level by percentage
+- Check CPU usage, RAM and battery status
+- Take screenshots saved to the desktop
+- Open File Explorer, minimize/maximize/close windows
+- Copy and paste via voice
+
+### Browser & Apps
+- Search Google by voice
+- Navigate to any URL
+- Open and close Chrome tabs
+- Scroll pages up and down
+- Open Spotify, Discord, Chrome or any website by voice
+- Close running applications by voice
+
+### Productivity
+- Set timers by voice ("set a 20 minute timer")
+- Free conversation with the local LLM for any question or task
+- Persistent conversation history across sessions
+
+### Visual HUD
+- Iron Man-style fullscreen interface with animated particle orb
+- Real-time system metrics (CPU, RAM) and clock on screen
+- Compact floating top bar mode that stays visible while you work
+- `Alt+C` toggles between fullscreen and compact mode
+- Orb animation changes based on assistant state
 
 ---
 
 ## HUD States
 
-The central particle orb changes animation based on assistant state:
-
 | State | Animation |
 |---|---|
-| Idle | Slow organic pulse with neural rays |
+| Idle | Slow organic pulse with neural rays from center |
 | Listening | Expanding ripples, high energy |
-| Processing | 8 independent atomic rings |
-| Speaking | Surface waves + concentric ripples |
-
-`Alt+C` toggles between fullscreen HUD and compact top bar.
+| Processing | 8 independent atomic rings spinning on different axes |
+| Speaking | Surface waves traveling across the orb + concentric ripples |
 
 ---
 
@@ -75,6 +107,45 @@ python hud_qt.py     # Visual HUD
 python jarvis.py     # Main assistant
 ```
 
+Say **"Hey Jarvis"** to activate. For the first 10 seconds after launch, JARVIS listens without requiring the wake word.
+
+---
+
+## Example Commands
+
+```
+"Hey Jarvis, play Bohemian Rhapsody"
+"What's the weather in Madrid?"
+"Turn the volume up"
+"How long does it take to drive to Barcelona?"
+"Do I have any unread emails?"
+"Set a 20 minute timer"
+"Show me tech news"
+"How's the CPU doing?"
+"Take a screenshot"
+"Search for the latest iPhone on Google"
+"Open VS Code"
+"Close Spotify"
+```
+
+---
+
+## Project Structure
+
+```
+jarvis/
+├── jarvis.py              # Main assistant script
+├── servidor.py            # Flask state server for HUD
+├── hud_qt.py              # PyQt6 visual interface
+├── spotify_config.py      # Spotify credentials (not included)
+├── credentials.json       # Google OAuth (not included)
+├── token_gmail.pickle     # Gmail token (not included)
+├── token_calendar.pickle  # Calendar token (not included)
+├── historial.json         # Conversation memory
+├── iniciar_jarvis.bat     # Windows auto-start script
+└── requirements.txt       # Python dependencies
+```
+
 ---
 
 ## Roadmap
@@ -92,7 +163,7 @@ python jarvis.py     # Main assistant
 
 ## Author
 
-**Alex** — CS Engineering student
+**Alex** — CS Engineering student, BCN eMotorsport autonomous vehicle team.
 
 ---
 
